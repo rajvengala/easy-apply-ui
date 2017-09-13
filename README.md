@@ -1,2 +1,2 @@
 # easy-apply-ui
-Easy Apply is a cloud based school admission processing service
+Easy Apply UI is a Web interface for Easy Apply API.

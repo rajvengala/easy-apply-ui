@@ -1,12 +1,25 @@
- md-form-field {
-   width: 300px;
- }
+md-form-field {
+  width: 300px;
+}
 
- md-toolbar {
-   flex: 1 0 auto;
-   text-align: right;
- }
+md-toolbar {
+  flex: 1 0 auto;
+  text-align: right;
+}
 
- md-toolbar span {
-   margin-right: 0.5em;
- }
+md-toolbar span {
+  margin-right: 0.5em;
+}
+
+md-grid-tile {
+  background-color: whitesmoke;
+}
+
+.search-container {
+  padding-top: 20px;
+}
+
+.grid-container {
+  padding-top: 20px;
+  padding-left: 10px;
+}

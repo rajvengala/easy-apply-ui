@@ -5,7 +5,8 @@
      fxLayoutGap="1em"
      fxLayout.xs="column"
      fxLayoutAlign="center "
-     fxLayoutAlign.xs="start start">
+     fxLayoutAlign.xs="start start"
+     class="search-container">
   <div fxFlex=""></div>
   <md-select placeholder="City"
              color="primary"
@@ -20,51 +21,29 @@
   </md-form-field>
   <div fxFlex=""></div>
 </div>
-<md-grid-list cols="3" rowHeight="3:1">
+<md-grid-list cols="3" rowHeight="3:2"
+              class="grid-container"
+              gutterSize="15px">
   <md-grid-tile>
-    <md-card>
-        <md-card-title>
-          School 1
-        </md-card-title>
-      <md-card-actions>
-      </md-card-actions>
-      <md-card-footer></md-card-footer>
-    </md-card>
+    <div fxLayout="column">
+
+      <span fxFlex="">School 1</span>
+      <div fxFlex="">Info</div>
+    </div>
   </md-grid-tile>
   <md-grid-tile>
-    <md-card>
-      <md-card-header>
-        <md-card-title>
-          School 2
-        </md-card-title>
-      </md-card-header>
-      <md-card-content></md-card-content>
-      <md-card-actions></md-card-actions>
-      <md-card-footer></md-card-footer>
-    </md-card>
+    School 2
   </md-grid-tile>
   <md-grid-tile>
-    <md-card>
-      <md-card-header>
-        <md-card-title>
-          School 3
-        </md-card-title>
-      </md-card-header>
-      <md-card-content></md-card-content>
-      <md-card-actions></md-card-actions>
-      <md-card-footer></md-card-footer>
-    </md-card>
+    School 3
   </md-grid-tile>
   <md-grid-tile>
-    <md-card>
-      <md-card-header>
-        <md-card-title>
-          School 4
-        </md-card-title>
-      </md-card-header>
-      <md-card-content></md-card-content>
-      <md-card-actions></md-card-actions>
-      <md-card-footer></md-card-footer>
-    </md-card>
+    School 4
+  </md-grid-tile>
+  <md-grid-tile>
+    School 5
+  </md-grid-tile>
+  <md-grid-tile>
+    School 6
   </md-grid-tile>
 </md-grid-list>

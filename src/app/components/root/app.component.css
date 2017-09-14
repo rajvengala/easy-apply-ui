@@ -1,0 +1,12 @@
+ md-form-field {
+   width: 300px;
+ }
+
+ md-toolbar {
+   flex: 1 0 auto;
+   text-align: right;
+ }
+
+ md-toolbar span {
+   margin-right: 0.5em;
+ }

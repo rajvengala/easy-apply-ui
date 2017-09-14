@@ -1,0 +1,70 @@
+<md-toolbar color="primary">
+  <span>Easy Apply</span>
+</md-toolbar>
+<div fxLayout="row"
+     fxLayoutGap="1em"
+     fxLayout.xs="column"
+     fxLayoutAlign="center "
+     fxLayoutAlign.xs="start start">
+  <div fxFlex=""></div>
+  <md-select placeholder="City"
+             color="primary"
+             fxFlex="">
+    <md-option *ngFor="let city of cities">{{city}}</md-option>
+  </md-select>
+  <md-form-field fxFlex="">
+    <md-icon mdPrefix>search</md-icon>
+    <input mdInput
+           color="primary"
+           placeholder="Locality">
+  </md-form-field>
+  <div fxFlex=""></div>
+</div>
+<md-grid-list cols="3" rowHeight="3:1">
+  <md-grid-tile>
+    <md-card>
+        <md-card-title>
+          School 1
+        </md-card-title>
+      <md-card-actions>
+      </md-card-actions>
+      <md-card-footer></md-card-footer>
+    </md-card>
+  </md-grid-tile>
+  <md-grid-tile>
+    <md-card>
+      <md-card-header>
+        <md-card-title>
+          School 2
+        </md-card-title>
+      </md-card-header>
+      <md-card-content></md-card-content>
+      <md-card-actions></md-card-actions>
+      <md-card-footer></md-card-footer>
+    </md-card>
+  </md-grid-tile>
+  <md-grid-tile>
+    <md-card>
+      <md-card-header>
+        <md-card-title>
+          School 3
+        </md-card-title>
+      </md-card-header>
+      <md-card-content></md-card-content>
+      <md-card-actions></md-card-actions>
+      <md-card-footer></md-card-footer>
+    </md-card>
+  </md-grid-tile>
+  <md-grid-tile>
+    <md-card>
+      <md-card-header>
+        <md-card-title>
+          School 4
+        </md-card-title>
+      </md-card-header>
+      <md-card-content></md-card-content>
+      <md-card-actions></md-card-actions>
+      <md-card-footer></md-card-footer>
+    </md-card>
+  </md-grid-tile>
+</md-grid-list>

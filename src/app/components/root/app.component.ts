@@ -1,5 +1,5 @@
 import {Component} from '@angular/core';
-import {CitiesService} from "../../services/cities.service";
+import {GetDetailsService} from '../../services/get-details.service';
 
 @Component({
   selector: 'app-root',
@@ -15,7 +15,7 @@ export class AppComponent {
   public schools: string[];
   public selectedSchool: string;
 
-  constructor(private citiesService: CitiesService) {
+  constructor(private citiesService: GetDetailsService) {
     this.cities = [];
     this.selectedCity = '';
     this.localities = [];
@@ -41,7 +41,6 @@ export class AppComponent {
       const localitiesPromise = this.citiesService.getAllLocalities(this.selectedCity);
       localitiesPromise.then(localitiesList => {
         this.localities = localitiesList;
-        console.log(this.localities)
       }).catch(error => {
 
       })
@@ -59,11 +58,10 @@ export class AppComponent {
   }
 
 
-  onLocalitySelected(locality:string): void {
-    const schoolsPromise = this.citiesService.getAllSchools(this.selectedCity,locality);
+  onLocalitySelected(locality: string): void {
+    const schoolsPromise = this.citiesService.getAllSchools(this.selectedCity, locality);
     schoolsPromise.then(schoolsList => {
       this.schools = schoolsList;
-      console.log(this.schools)
     }).catch(error => {
 
     })

@@ -6,7 +6,7 @@ import {FlexLayoutModule} from "@angular/flex-layout";
 import {EasyApplyMaterialModule} from "./easy-apply-material.module";
 import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
 import {AppRoutingModule} from "./easy-apply-routing.module";
-import {CitiesService} from "../services/cities.service";
+import {GetDetailsService} from "../services/get-details.service";
 import {HttpModule} from "@angular/http";
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 
@@ -25,7 +25,7 @@ import {FormsModule, ReactiveFormsModule} from "@angular/forms";
     HttpModule
   ],
   providers: [
-    CitiesService
+    GetDetailsService
   ],
   bootstrap: [AppComponent]
 })

@@ -3,9 +3,10 @@ import {Headers, Http, RequestOptions, Response} from '@angular/http';
 
 import 'rxjs/add/operator/toPromise';
 import {Commons} from "../utils/commons.class";
+import {endpoints} from "../properties/endpoints";
 
 @Injectable()
-export class CitiesService {
+export class GetDetailsService {
 
   private requestOptions: RequestOptions;
 
@@ -14,37 +15,27 @@ export class CitiesService {
   }
 
   getAllCities(): Promise<any> {
-    return this.http.get('http://easyapply.online/api/cities', this.requestOptions)
+    return this.http.get(endpoints.getCitiesUrl, this.requestOptions)
       .toPromise()
-      .then(this.extractAllCities)
+      .then(this.handleResponse)
       .catch(this.handleError);
-  }
-
-  private extractAllCities(response: Response): Promise<any> {
-    const parsedResponseObj = response.json();
-    return Promise.resolve(parsedResponseObj);
   }
 
   getAllLocalities(cityName: string): Promise<any> {
-    return this.http.get(`http://easyapply.online/api/cities/${cityName}/localities`, this.requestOptions)
+    return this.http.get(endpoints.getlocalitiesUrl(cityName), this.requestOptions)
       .toPromise()
-      .then(this.extractAllLocalities)
+      .then(this.handleResponse)
       .catch(this.handleError);
-  }
-
-  private extractAllLocalities(response: Response): Promise<any> {
-    const parsedResponseObj = response.json();
-    return Promise.resolve(parsedResponseObj);
   }
 
   getAllSchools(cityName: string, locality: string): Promise<any> {
-    return this.http.get(`http://easyapply.online/api/cities/${cityName}/localities/${locality}/schools`, this.requestOptions)
+    return this.http.get(endpoints.getSchoolsUrl(cityName, locality), this.requestOptions)
       .toPromise()
-      .then(this.extractAllSchools)
+      .then(this.handleResponse)
       .catch(this.handleError);
   }
 
-  private extractAllSchools(response: Response): Promise<any> {
+  private handleResponse(response: Response): Promise<any> {
     const parsedResponseObj = response.json();
     return Promise.resolve(parsedResponseObj);
   }

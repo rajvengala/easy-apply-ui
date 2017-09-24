@@ -10,40 +10,46 @@
   <div fxFlex=""></div>
   <md-select placeholder="City"
              color="primary"
-             fxFlex="">
-    <md-option *ngFor="let city of cities">{{city}}</md-option>
+             [(ngModel)]="selectedCity"
+             fxFlex=""
+             required>
+    <md-option *ngFor="let city of cities"
+               [value]="city">{{city}}
+    </md-option>
   </md-select>
-  <md-form-field fxFlex="">
-    <md-icon mdPrefix>search</md-icon>
+  <md-form-field>
     <input mdInput
-           color="primary"
-           placeholder="Locality">
+           fxFlex=""
+           type="text"
+           maxlength="50"
+           pattern="[A-Za-z0-9_-\s*]{3,}"
+           placeholder="Locality"
+           [(ngModel)]="selectedLocality"
+           [mdAutocomplete]="LocalityAuto"
+           (input)="fetchLocalities()"
+           (ngModelChange)="filterLocalities(selectedLocality)"
+           required>
+    <md-icon mdSuffix>search</md-icon>
   </md-form-field>
+  <md-autocomplete #LocalityAuto="mdAutocomplete">
+    <md-option *ngFor="let locality of filteredLocality"
+               [value]="locality"
+               (click)="onLocalitySelected(locality)">
+      {{ locality }}
+    </md-option>
+  </md-autocomplete>
   <div fxFlex=""></div>
 </div>
 <md-grid-list cols="3" rowHeight="3:2"
               class="grid-container"
-              gutterSize="15px">
+              gutterSize="15px"
+              *ngFor="let school of schools">
   <md-grid-tile>
     <div fxLayout="column">
 
-      <span fxFlex="">School 1</span>
+      <span fxFlex="">{{school.name}}</span>
       <div fxFlex="">Info</div>
+      <md-icon>favorite_border</md-icon>
     </div>
-  </md-grid-tile>
-  <md-grid-tile>
-    School 2
-  </md-grid-tile>
-  <md-grid-tile>
-    School 3
-  </md-grid-tile>
-  <md-grid-tile>
-    School 4
-  </md-grid-tile>
-  <md-grid-tile>
-    School 5
-  </md-grid-tile>
-  <md-grid-tile>
-    School 6
   </md-grid-tile>
 </md-grid-list>

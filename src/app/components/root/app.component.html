@@ -42,14 +42,18 @@
 </div>
 <md-grid-list cols="3" rowHeight="3:2"
               class="grid-container"
-              gutterSize="15px"
-              *ngFor="let school of schools">
-  <md-grid-tile>
-    <div fxLayout="column">
+              gutterSize="15px">
+  <md-grid-tile
+    fxLayout="column"
+    fxLayoutAlign="space-between"
+    *ngFor="let school of schools">
 
-      <span fxFlex="">{{school.name}}</span>
-      <div fxFlex="">Info</div>
-      <md-icon>favorite_border</md-icon>
-    </div>
+    <span fxFlex="">{{school.name}}</span>
+
+    <button md-fab
+            color="primary"
+            type="button">
+      <md-icon>favorite</md-icon>
+    </button>
   </md-grid-tile>
 </md-grid-list>

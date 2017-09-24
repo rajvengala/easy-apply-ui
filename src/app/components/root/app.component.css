@@ -15,6 +15,10 @@ md-grid-tile {
   background-color: whitesmoke;
 }
 
+md-grid-tile button {
+  font-size: small;
+}
+
 .search-container {
   padding-top: 20px;
 }

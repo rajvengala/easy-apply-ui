@@ -66,4 +66,8 @@ export class AppComponent {
 
     })
   }
+
+  applySchool(schoolId: string): void {
+    console.log(schoolId)
+  }
 }

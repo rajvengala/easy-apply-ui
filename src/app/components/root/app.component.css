@@ -19,6 +19,11 @@ md-grid-tile button {
   font-size: small;
 }
 
+md-grid-tile-header {
+  font-weight: bolder;
+  font-size: large;
+}
+
 .search-container {
   padding-top: 20px;
 }

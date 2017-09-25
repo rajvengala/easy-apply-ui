@@ -44,16 +44,20 @@
               class="grid-container"
               gutterSize="15px">
   <md-grid-tile
-    fxLayout="column"
-    fxLayoutAlign="space-between"
     *ngFor="let school of schools">
-
-    <span fxFlex="">{{school.name}}</span>
-
-    <button md-fab
-            color="primary"
-            type="button">
-      <md-icon>favorite</md-icon>
-    </button>
+    <md-grid-tile-header color="primary">{{school.name}}</md-grid-tile-header>
+    <md-grid-tile-footer
+      fxLayout="row"
+      fxLayoutAlign="space-between center">
+      <button fxFlex="10%" md-icon-button type="button">
+        <md-icon>favorite_outline</md-icon>
+      </button>
+      <button fxFlex="20%" md-raised-button
+              color="primary"
+              type="button"
+              (click)="applySchool(school.name)">
+        Apply
+      </button>
+    </md-grid-tile-footer>
   </md-grid-tile>
 </md-grid-list>

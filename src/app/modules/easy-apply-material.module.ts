@@ -40,7 +40,7 @@ import {
     MdCardModule,
     MdGridListModule,
     MdButtonModule,
-    MdAutocompleteModule
+    MdAutocompleteModule,
   ]
 })
 
